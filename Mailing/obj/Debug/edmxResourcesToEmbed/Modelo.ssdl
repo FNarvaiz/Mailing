@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MAILINGModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MAILINGModelStoreContainer">
+    <EntitySet Name="ENVIADOS" EntityType="MAILINGModel.Store.ENVIADOS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FIRMAS" EntityType="MAILINGModel.Store.FIRMAS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LOCALIDADES" EntityType="MAILINGModel.Store.LOCALIDADES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MAILS" EntityType="MAILINGModel.Store.MAILS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MENSAJES" EntityType="MAILINGModel.Store.MENSAJES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RECEPTORES" EntityType="MAILINGModel.Store.RECEPTORES" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__ENVIADOS__id_mai__1A14E395" Association="MAILINGModel.Store.FK__ENVIADOS__id_mai__1A14E395">
+      <End Role="MAILS" EntitySet="MAILS" />
+      <End Role="ENVIADOS" EntitySet="ENVIADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ENVIADOS__id_mai__24927208" Association="MAILINGModel.Store.FK__ENVIADOS__id_mai__24927208">
+      <End Role="MAILS" EntitySet="MAILS" />
+      <End Role="ENVIADOS" EntitySet="ENVIADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ENVIADOS__id_men__1CF15040" Association="MAILINGModel.Store.FK__ENVIADOS__id_men__1CF15040">
+      <End Role="MENSAJES" EntitySet="MENSAJES" />
+      <End Role="ENVIADOS" EntitySet="ENVIADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ENVIADOS__id_men__276EDEB3" Association="MAILINGModel.Store.FK__ENVIADOS__id_men__276EDEB3">
+      <End Role="MENSAJES" EntitySet="MENSAJES" />
+      <End Role="ENVIADOS" EntitySet="ENVIADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ENVIADOS__id_rec__1B0907CE" Association="MAILINGModel.Store.FK__ENVIADOS__id_rec__1B0907CE">
+      <End Role="RECEPTORES" EntitySet="RECEPTORES" />
+      <End Role="ENVIADOS" EntitySet="ENVIADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ENVIADOS__id_rec__25869641" Association="MAILINGModel.Store.FK__ENVIADOS__id_rec__25869641">
+      <End Role="RECEPTORES" EntitySet="RECEPTORES" />
+      <End Role="ENVIADOS" EntitySet="ENVIADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MENSAJES__id_fir__1DE57479" Association="MAILINGModel.Store.FK__MENSAJES__id_fir__1DE57479">
+      <End Role="FIRMAS" EntitySet="FIRMAS" />
+      <End Role="MENSAJES" EntitySet="MENSAJES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MENSAJES__id_fir__286302EC" Association="MAILINGModel.Store.FK__MENSAJES__id_fir__286302EC">
+      <End Role="FIRMAS" EntitySet="FIRMAS" />
+      <End Role="MENSAJES" EntitySet="MENSAJES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RECEPTORE__id_Lo__1BFD2C07" Association="MAILINGModel.Store.FK__RECEPTORE__id_Lo__1BFD2C07">
+      <End Role="LOCALIDADES" EntitySet="LOCALIDADES" />
+      <End Role="RECEPTORES" EntitySet="RECEPTORES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RECEPTORE__id_Lo__267ABA7A" Association="MAILINGModel.Store.FK__RECEPTORE__id_Lo__267ABA7A">
+      <End Role="LOCALIDADES" EntitySet="LOCALIDADES" />
+      <End Role="RECEPTORES" EntitySet="RECEPTORES" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ENVIADOS">
+    <Key>
+      <PropertyRef Name="id_mail" />
+      <PropertyRef Name="id_mensaje" />
+      <PropertyRef Name="id_receptor" />
+    </Key>
+    <Property Name="id_mail" Type="int" Nullable="false" />
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="id_receptor" Type="int" Nullable="false" />
+    <Property Name="Fecha_Enviado" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FIRMAS">
+    <Key>
+      <PropertyRef Name="id_firma" />
+    </Key>
+    <Property Name="id_firma" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Imagen" Type="varchar" MaxLength="200" />
+    <Property Name="Slogan" Type="varchar" MaxLength="100" />
+    <Property Name="Telefono" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Pagina" Type="varchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="LOCALIDADES">
+    <Key>
+      <PropertyRef Name="id_Localidad" />
+    </Key>
+    <Property Name="id_Localidad" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Cp" Type="int" />
+    <Property Name="Prefijo" Type="int" />
+  </EntityType>
+  <EntityType Name="MAILS">
+    <Key>
+      <PropertyRef Name="id_mail" />
+    </Key>
+    <Property Name="id_mail" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Pass" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="ServerHost" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="SSL" Type="bit" Nullable="false" />
+    <Property Name="Puerto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MENSAJES">
+    <Key>
+      <PropertyRef Name="id_mensaje" />
+    </Key>
+    <Property Name="id_mensaje" Type="int" Nullable="false" />
+    <Property Name="Asunto" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="1000" />
+    <Property Name="Creado" Type="datetime" Nullable="false" />
+    <Property Name="id_firma" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RECEPTORES">
+    <Key>
+      <PropertyRef Name="id_receptor" />
+    </Key>
+    <Property Name="id_receptor" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Mail" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="id_Localidad" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ENVIADOS__id_mai__1A14E395">
+    <End Role="MAILS" Type="MAILINGModel.Store.MAILS" Multiplicity="1" />
+    <End Role="ENVIADOS" Type="MAILINGModel.Store.ENVIADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MAILS">
+        <PropertyRef Name="id_mail" />
+      </Principal>
+      <Dependent Role="ENVIADOS">
+        <PropertyRef Name="id_mail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ENVIADOS__id_mai__24927208">
+    <End Role="MAILS" Type="MAILINGModel.Store.MAILS" Multiplicity="1" />
+    <End Role="ENVIADOS" Type="MAILINGModel.Store.ENVIADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MAILS">
+        <PropertyRef Name="id_mail" />
+      </Principal>
+      <Dependent Role="ENVIADOS">
+        <PropertyRef Name="id_mail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ENVIADOS__id_men__1CF15040">
+    <End Role="MENSAJES" Type="MAILINGModel.Store.MENSAJES" Multiplicity="1" />
+    <End Role="ENVIADOS" Type="MAILINGModel.Store.ENVIADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENSAJES">
+        <PropertyRef Name="id_mensaje" />
+      </Principal>
+      <Dependent Role="ENVIADOS">
+        <PropertyRef Name="id_mensaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ENVIADOS__id_men__276EDEB3">
+    <End Role="MENSAJES" Type="MAILINGModel.Store.MENSAJES" Multiplicity="1" />
+    <End Role="ENVIADOS" Type="MAILINGModel.Store.ENVIADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENSAJES">
+        <PropertyRef Name="id_mensaje" />
+      </Principal>
+      <Dependent Role="ENVIADOS">
+        <PropertyRef Name="id_mensaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ENVIADOS__id_rec__1B0907CE">
+    <End Role="RECEPTORES" Type="MAILINGModel.Store.RECEPTORES" Multiplicity="1" />
+    <End Role="ENVIADOS" Type="MAILINGModel.Store.ENVIADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RECEPTORES">
+        <PropertyRef Name="id_receptor" />
+      </Principal>
+      <Dependent Role="ENVIADOS">
+        <PropertyRef Name="id_receptor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ENVIADOS__id_rec__25869641">
+    <End Role="RECEPTORES" Type="MAILINGModel.Store.RECEPTORES" Multiplicity="1" />
+    <End Role="ENVIADOS" Type="MAILINGModel.Store.ENVIADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RECEPTORES">
+        <PropertyRef Name="id_receptor" />
+      </Principal>
+      <Dependent Role="ENVIADOS">
+        <PropertyRef Name="id_receptor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MENSAJES__id_fir__1DE57479">
+    <End Role="FIRMAS" Type="MAILINGModel.Store.FIRMAS" Multiplicity="1" />
+    <End Role="MENSAJES" Type="MAILINGModel.Store.MENSAJES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FIRMAS">
+        <PropertyRef Name="id_firma" />
+      </Principal>
+      <Dependent Role="MENSAJES">
+        <PropertyRef Name="id_firma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MENSAJES__id_fir__286302EC">
+    <End Role="FIRMAS" Type="MAILINGModel.Store.FIRMAS" Multiplicity="1" />
+    <End Role="MENSAJES" Type="MAILINGModel.Store.MENSAJES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FIRMAS">
+        <PropertyRef Name="id_firma" />
+      </Principal>
+      <Dependent Role="MENSAJES">
+        <PropertyRef Name="id_firma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RECEPTORE__id_Lo__1BFD2C07">
+    <End Role="LOCALIDADES" Type="MAILINGModel.Store.LOCALIDADES" Multiplicity="1" />
+    <End Role="RECEPTORES" Type="MAILINGModel.Store.RECEPTORES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCALIDADES">
+        <PropertyRef Name="id_Localidad" />
+      </Principal>
+      <Dependent Role="RECEPTORES">
+        <PropertyRef Name="id_Localidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RECEPTORE__id_Lo__267ABA7A">
+    <End Role="LOCALIDADES" Type="MAILINGModel.Store.LOCALIDADES" Multiplicity="1" />
+    <End Role="RECEPTORES" Type="MAILINGModel.Store.RECEPTORES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCALIDADES">
+        <PropertyRef Name="id_Localidad" />
+      </Principal>
+      <Dependent Role="RECEPTORES">
+        <PropertyRef Name="id_Localidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

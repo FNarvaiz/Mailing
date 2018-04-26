@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MAILINGModelStoreContainer" CdmEntityContainer="MAILINGEntities">
+    <EntitySetMapping Name="ENVIADOS">
+      <EntityTypeMapping TypeName="MAILINGModel.ENVIADO">
+        <MappingFragment StoreEntitySet="ENVIADOS">
+          <ScalarProperty Name="id_mail" ColumnName="id_mail" />
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="id_receptor" ColumnName="id_receptor" />
+          <ScalarProperty Name="Fecha_Enviado" ColumnName="Fecha_Enviado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FIRMAS">
+      <EntityTypeMapping TypeName="MAILINGModel.FIRMA">
+        <MappingFragment StoreEntitySet="FIRMAS">
+          <ScalarProperty Name="id_firma" ColumnName="id_firma" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Slogan" ColumnName="Slogan" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Pagina" ColumnName="Pagina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOCALIDADES">
+      <EntityTypeMapping TypeName="MAILINGModel.LOCALIDAD">
+        <MappingFragment StoreEntitySet="LOCALIDADES">
+          <ScalarProperty Name="id_Localidad" ColumnName="id_Localidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cp" ColumnName="Cp" />
+          <ScalarProperty Name="Prefijo" ColumnName="Prefijo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAILS">
+      <EntityTypeMapping TypeName="MAILINGModel.MAIL">
+        <MappingFragment StoreEntitySet="MAILS">
+          <ScalarProperty Name="id_mail" ColumnName="id_mail" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="ServerHost" ColumnName="ServerHost" />
+          <ScalarProperty Name="SSL" ColumnName="SSL" />
+          <ScalarProperty Name="Puerto" ColumnName="Puerto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENSAJES">
+      <EntityTypeMapping TypeName="MAILINGModel.MENSAJE">
+        <MappingFragment StoreEntitySet="MENSAJES">
+          <ScalarProperty Name="id_mensaje" ColumnName="id_mensaje" />
+          <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Creado" ColumnName="Creado" />
+          <ScalarProperty Name="id_firma" ColumnName="id_firma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECEPTORES">
+      <EntityTypeMapping TypeName="MAILINGModel.RECEPTOR">
+        <MappingFragment StoreEntitySet="RECEPTORES">
+          <ScalarProperty Name="id_receptor" ColumnName="id_receptor" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="id_Localidad" ColumnName="id_Localidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

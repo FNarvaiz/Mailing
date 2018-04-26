@@ -1,0 +1,15 @@
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\bin\Debug\Mailing.exe.config
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\bin\Debug\Mailing.exe
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\bin\Debug\Mailing.pdb
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\bin\Debug\EntityFramework.dll
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\bin\Debug\EntityFramework.xml
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\obj\Debug\Mailing.Properties.Resources.resources
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\obj\Debug\Mailing.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\obj\Debug\Mailing.exe
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\obj\Debug\Mailing.pdb
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\obj\Debug\Mailing.frn_abm.resources
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\obj\Debug\Mailing.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2012\Projects\Mailing\Mailing\obj\Debug\Mailing.Form1.resources
+C:\Users\UnAlegreTigre\Desktop\Projects\Mailing\Mailing\bin\Debug\Mailing.exe.config
+C:\Users\UnAlegreTigre\Desktop\Projects\Mailing\Mailing\obj\Debug\Mailing.exe
+C:\Users\UnAlegreTigre\Desktop\Projects\Mailing\Mailing\obj\Debug\Mailing.pdb
